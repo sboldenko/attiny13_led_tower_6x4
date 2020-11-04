@@ -7,13 +7,15 @@
 
 #define F_CPU     9600000UL             	
 
+#include "init_mcu.h"
+#include <avr/interrupt.h>
+#include <stdint.h>
 #include <avr/io.h>
 #include <util/delay.h>
-#include "blink_mode.h"
-#include "init_mcu.h"
 #include "driver_74hc595.h"
+#include "blink_mode.h"
 
-uint8_t k=0;
+uint8_t k = 0;
 
 ISR(PCINT0_vect)
 {
@@ -26,7 +28,7 @@ ISR(PCINT0_vect)
 		k = 0;
 }
 
-void main(void)
+int main()
 {
 	init_mcu();
 

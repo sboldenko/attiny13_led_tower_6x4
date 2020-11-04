@@ -8,7 +8,7 @@ void driver_74hc595(uint8_t data_in)
 {
 	uint8_t i = 0;
 	
-	for (i = 0; i <=7; i++)
+	for (i = 0; i <= 7; i++)
 	{
 		if(bit_is_set(data_in, i))
 		{
