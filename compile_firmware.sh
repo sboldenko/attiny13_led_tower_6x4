@@ -6,7 +6,7 @@ echo "."
 mkdir output
 cd src
 echo "start compilation"
-avr-gcc -mmcu=attiny13 -Os main.c blink_mode.c init_mcu.c driver_74hc595.c -o ../output/main.o
+avr-gcc -std=c99 -Wall -mmcu=attiny13 -Os main.c init_mcu.c driver_74hc595.c blink_mode.c -o ../output/main.o
 echo "compilation is complete"
 echo "start conversion to HEX"
 cd ../output
